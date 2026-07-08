@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sean's personal portfolio and LinkedIn blog — AI integration specialist, workflow automation strategist, and frontline business analyst sharing real-world case studies." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Sean | AI Integration & Business Strategy" />
+  <meta property="og:description" content="Real-world case studies in AI workflow automation, revenue scaling, and data integrity — from the frontlines of modern business operations." />
+  <meta property="og:type" content="website" />
+  <title>Sean | AI Integration & Business Strategy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ── NAVIGATION ── -->
+<header role="banner">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__pill">
+      <a href="index.html" class="nav__brand" aria-label="Sean's portfolio home">
+        <div class="nav__logo" aria-hidden="true">S</div>
+        <span class="nav__brand-text">Sean</span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link" id="nav-home">Home</a></li>
+        <li><a href="tools.html" class="nav__link" id="nav-tools">Tools</a></li>
+        <li><a href="projects.html" class="nav__link" id="nav-projects">Projects</a></li>
+        <li><a href="contact.html" class="nav__link" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <a href="contact.html" class="nav__cta" id="nav-hire-btn">Hire Me →</a>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close navigation">✕</button>
+  <a href="index.html" class="nav__mobile-link">Home</a>
+  <a href="tools.html" class="nav__mobile-link">Tools</a>
+  <a href="projects.html" class="nav__mobile-link">Projects</a>
+  <a href="contact.html" class="nav__mobile-link">Contact</a>
+  <a href="contact.html" class="btn btn--primary" style="margin-top:16px;">Hire Me →</a>
+</div>
+
+<!-- ── HERO SECTION ── -->
+<main id="main-content">
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero__eyebrow" aria-label="Status: Open to consulting">
+        Open to Consulting
+      </div>
+
+      <h1 class="hero__heading" id="hero-heading">
+        Turning <span class="accent">Business Chaos</span><br />
+        Into Automated Systems
+      </h1>
+
+      <p class="hero__sub">
+        I'm Sean — an AI integration specialist and frontline operations strategist. I document real-world case studies in workflow automation, revenue scaling, and data integrity from the trenches of modern business.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#blog-feed" class="btn btn--primary">Read My Stories</a>
+        <a href="tools.html" class="btn btn--secondary">Explore AI Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <section class="section--sm" aria-label="Key statistics">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="3" data-suffix="+" aria-label="3+ published case studies">3+</div>
+          <div class="stat-card__label">Case Studies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="100" data-suffix="%" aria-label="100% client-side tools">100%</div>
+          <div class="stat-card__label">Local Tools</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="0" data-suffix="" aria-label="Zero vendor lock-in">0</div>
+          <div class="stat-card__label">Vendor Lock-In</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__value" data-count="2026" data-suffix="" aria-label="Launched in 2026">2026</div>
+          <div class="stat-card__label">Launched</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── BLOG FEED ── -->
+  <section class="section" id="blog-feed" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__eyebrow">Published Case Studies</p>
+        <h2 class="section-header__title" id="blog-heading">From the Frontlines</h2>
+        <p class="section-header__desc">
+          Real situations. Real resolutions. Every post documents a live operational scenario with transferable lessons in AI, automation, and strategic business thinking.
+        </p>
+      </div>
+
+      <div class="blog-feed" id="blog-posts-list">
+
+        <!-- POST 1 -->
+        <article class="blog-card reveal"
+                 data-post-id="1"
+                 data-post-title="The eBay Frontline Resolution"
+                 role="article"
+                 tabindex="0"
+                 aria-label="Read: The eBay Frontline Resolution">
+          <div class="blog-card__content">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <span class="card__tag">Case Study</span>
+              <span class="badge badge--live">Published</span>
+            </div>
+            <div class="blog-card__number">Post #001 · July 2026</div>
+            <h3 class="blog-card__title">The eBay Frontline Resolution</h3>
+            <p class="blog-card__excerpt">
+              When a high-volume eBay transaction dispute escalated beyond standard resolution protocols, I deployed a systematic, data-backed communication strategy that turned an adversarial seller interaction into a textbook de-escalation win — recovering full value while documenting a repeatable playbook for AI-assisted dispute management.
+            </p>
+            <div class="blog-card__footer">
+              <span class="card__date" style="font-size:12px;">🕐 5 min read</span>
+              <span class="card__date" style="font-size:12px;">🏷️ Dispute Resolution · E-Commerce</span>
+            </div>
+          </div>
+          <div class="blog-card__arrow" aria-hidden="true">→</div>
+        </article>
+
+        <!-- POST 2 -->
+        <article class="blog-card reveal reveal-delay-1"
+                 data-post-id="2"
+                 data-post-title="AP Wireless Data Integrity"
+                 role="article"
+                 tabindex="0"
+                 aria-label="Read: AP Wireless Data Integrity">
+          <div class="blog-card__content">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <span class="card__tag">Technical</span>
+              <span class="badge badge--draft">Draft</span>
+            </div>
+            <div class="blog-card__number">Post #002 · August 2026</div>
+            <h3 class="blog-card__title">AP Wireless: Data Integrity at Scale</h3>
+            <p class="blog-card__excerpt">
+              Accounts Payable workflows at a wireless infrastructure provider were hemorrhaging accuracy due to a cascade of upstream data mismatches. This post breaks down the root-cause analysis process, the lightweight validation layer I engineered to catch discrepancies before they hit the ledger, and why most AP problems are actually data pipeline problems in disguise.
+            </p>
+            <div class="blog-card__footer">
+              <span class="card__date" style="font-size:12px;">🕐 7 min read</span>
+              <span class="card__date" style="font-size:12px;">🏷️ Data Integrity · Finance Ops</span>
+            </div>
+          </div>
+          <div class="blog-card__arrow" aria-hidden="true">→</div>
+        </article>
+
+        <!-- POST 3 -->
+        <article class="blog-card reveal reveal-delay-2"
+                 data-post-id="3"
+                 data-post-title="First & Bowl Revenue Scaling"
+                 role="article"
+                 tabindex="0"
+                 aria-label="Read: First & Bowl Revenue Scaling">
+          <div class="blog-card__content">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <span class="card__tag card__tag--warning">Strategy</span>
+              <span class="badge badge--coming">Coming Soon</span>
+            </div>
+            <div class="blog-card__number">Post #003 · September 2026</div>
+            <h3 class="blog-card__title">First & Bowl: Revenue Scaling Playbook</h3>
+            <p class="blog-card__excerpt">
+              How a sports hospitality concept went from concept to revenue-positive in under 90 days using systematized booking flows, AI-assisted customer segmentation, and lean operational architecture. This case study documents the full growth stack — from initial pricing model to upsell funnel mechanics — with raw numbers included.
+            </p>
+            <div class="blog-card__footer">
+              <span class="card__date" style="font-size:12px;">🕐 9 min read</span>
+              <span class="card__date" style="font-size:12px;">🏷️ Revenue Growth · Hospitality</span>
+            </div>
+          </div>
+          <div class="blog-card__arrow" aria-hidden="true">→</div>
+        </article>
+
+      </div><!-- /blog-feed -->
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ── ABOUT / VALUE PROP STRIP ── -->
+  <section class="section--sm" aria-labelledby="about-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;" class="reveal" id="value-grid">
+        <div class="card">
+          <div style="font-size:28px;margin-bottom:12px;">⚙️</div>
+          <h3 style="font-size:16px;margin-bottom:8px;">Systems Thinker</h3>
+          <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.65;">
+            Every operational problem has a root cause and a repeatable fix. I build the frameworks, not just the patches.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size:28px;margin-bottom:12px;">🤖</div>
+          <h3 style="font-size:16px;margin-bottom:8px;">AI Integration</h3>
+          <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.65;">
+            I design human-AI collaboration workflows that actually ship — no bloated platforms, no black-box dependencies.
+          </p>
+        </div>
+        <div class="card">
+          <div style="font-size:28px;margin-bottom:12px;">📊</div>
+          <h3 style="font-size:16px;margin-bottom:8px;">Frontline Data</h3>
+          <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.65;">
+            Real numbers from real deployments. Every case study is fully traceable to an actual operational scenario.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA STRIP ── -->
+  <section class="section--sm" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="card reveal" style="text-align:center;padding:48px 32px;background:linear-gradient(135deg,rgba(62,145,255,0.06),rgba(107,91,255,0.06));border-color:rgba(62,145,255,0.20);">
+        <h2 id="cta-heading" style="font-size:clamp(20px,3vw,28px);margin-bottom:12px;">Ready to Automate Something Real?</h2>
+        <p style="color:var(--color-text-secondary);font-size:15px;max-width:480px;margin:0 auto 24px;">
+          Whether it's a workflow audit, an AI integration strategy, or a revenue systems deep-dive — let's talk.
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn--primary" id="cta-contact-btn">Start a Conversation</a>
+          <a href="tools.html" class="btn btn--secondary" id="cta-tools-btn">Try the Free Tools</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <div class="footer__brand-logo" aria-hidden="true">S</div>
+          <span class="footer__brand-name">Sean's Portfolio</span>
+        </div>
+        <p class="footer__tagline">
+          AI integration specialist and frontline business strategist. Building the playbooks that make automation actually work.
+        </p>
+        <div class="footer__socials" style="margin-top:20px;">
+          <a href="https://linkedin.com" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="https://github.com" class="footer__social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
+          <a href="mailto:hello@example.com" class="footer__social-link" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Pages</p>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="tools.html" class="footer__link">Tools</a></li>
+          <li><a href="projects.html" class="footer__link">Projects</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Connect</p>
+        <ul class="footer__links" role="list">
+          <li><a href="https://linkedin.com" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="contact.html" class="footer__link">Hire Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Sean. Built with zero external dependencies.</span>
+      <span>Crafted in the spirit of <span style="color:var(--color-accent);">radical clarity</span>.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

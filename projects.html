@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Open-source workflow automation projects, AI integration systems, and data validation frameworks — all linked directly to GitHub." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Projects | Sean's Portfolio" />
+  <meta property="og:description" content="Open-source AI workflow projects, automation frameworks, and data integrity systems." />
+  <title>Projects | Sean's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ── NAVIGATION ── -->
+<header role="banner">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__pill">
+      <a href="index.html" class="nav__brand" aria-label="Sean's portfolio home">
+        <div class="nav__logo" aria-hidden="true">S</div>
+        <span class="nav__brand-text">Sean</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="tools.html" class="nav__link">Tools</a></li>
+        <li><a href="projects.html" class="nav__link">Projects</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="nav__cta">Hire Me →</a>
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close navigation">✕</button>
+  <a href="index.html" class="nav__mobile-link">Home</a>
+  <a href="tools.html" class="nav__mobile-link">Tools</a>
+  <a href="projects.html" class="nav__mobile-link active">Projects</a>
+  <a href="contact.html" class="nav__mobile-link">Contact</a>
+  <a href="contact.html" class="btn btn--primary" style="margin-top:16px;">Hire Me →</a>
+</div>
+
+<main id="main-content">
+  <!-- ── PAGE HEADER ── -->
+  <section class="section" aria-labelledby="projects-page-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__eyebrow">Open Source</p>
+        <h1 class="section-header__title" id="projects-page-heading">GitHub Workspace</h1>
+        <p class="section-header__desc">
+          Production-grade automation frameworks, workflow templates, and AI integration utilities — all publicly available. Fork, adapt, and ship.
+        </p>
+      </div>
+
+      <!-- GitHub Link Banner -->
+      <div class="reveal" style="margin-bottom:40px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);flex-wrap:wrap;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:var(--radius-md);background:rgba(255,255,255,0.05);border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-size:20px;">gh</div>
+            <div>
+              <div style="font-weight:700;font-size:15px;">github.com/sean</div>
+              <div style="font-size:12px;color:var(--color-text-secondary);">Full repository ecosystem — all projects, forks, and contributions</div>
+            </div>
+          </div>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--sm" id="github-profile-link">
+            View GitHub Profile →
+          </a>
+        </div>
+      </div>
+
+      <!-- ── FEATURED PROJECTS GRID ── -->
+      <div style="margin-bottom:16px;" class="reveal">
+        <p style="font-size:12px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:1px;">Featured Projects</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card reveal" id="project-card-dispute-engine" aria-labelledby="proj-1-title">
+          <div class="project-card__header">
+            <span class="project-card__icon" aria-hidden="true">⚖️</span>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Dispute Resolution Engine on GitHub" id="proj-1-github-link">gh</a>
+              <a href="#" class="project-card__link" aria-label="View live demo" id="proj-1-demo-link">↗</a>
+            </div>
+          </div>
+          <h2 class="project-card__title" id="proj-1-title">Dispute Resolution Engine</h2>
+          <p class="project-card__desc">
+            A deterministic workflow framework for marketplace dispute management. Built on vanilla JavaScript with zero dependencies — handles case classification, evidence scoring, and escalation routing based on rule-defined logic trees. Extracted directly from the eBay Frontline Resolution case study.
+          </p>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);margin:8px 0;">
+            <span class="badge badge--live">Active</span>
+            <span style="font-size:12px;color:var(--color-text-tertiary);">⭐ — &nbsp;·&nbsp; 🍴 —</span>
+          </div>
+          <div class="project-card__tags">
+            <span class="project-card__tag">JavaScript</span>
+            <span class="project-card__tag">Automation</span>
+            <span class="project-card__tag">E-Commerce</span>
+            <span class="project-card__tag">Zero-Dep</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card reveal reveal-delay-1" id="project-card-ap-validator" aria-labelledby="proj-2-title">
+          <div class="project-card__header">
+            <span class="project-card__icon" aria-hidden="true">🔍</span>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View AP Data Validator on GitHub" id="proj-2-github-link">gh</a>
+              <a href="#" class="project-card__link" aria-label="View documentation" id="proj-2-docs-link">↗</a>
+            </div>
+          </div>
+          <h2 class="project-card__title" id="proj-2-title">AP Data Integrity Validator</h2>
+          <p class="project-card__desc">
+            Lightweight accounts payable data validation layer that catches discrepancies between upstream vendor data sources and ledger entries before they propagate. Built for the AP Wireless case study — runs in-browser or as a Node.js CLI script with no external package dependencies.
+          </p>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);margin:8px 0;">
+            <span class="badge badge--draft">In Progress</span>
+            <span style="font-size:12px;color:var(--color-text-tertiary);">⭐ — &nbsp;·&nbsp; 🍴 —</span>
+          </div>
+          <div class="project-card__tags">
+            <span class="project-card__tag">Node.js</span>
+            <span class="project-card__tag">Data Validation</span>
+            <span class="project-card__tag">Finance Ops</span>
+            <span class="project-card__tag">CLI</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project-card reveal reveal-delay-2" id="project-card-revenue-stack" aria-labelledby="proj-3-title">
+          <div class="project-card__header">
+            <span class="project-card__icon" aria-hidden="true">📈</span>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View Revenue Growth Stack on GitHub" id="proj-3-github-link">gh</a>
+              <a href="#" class="project-card__link" aria-label="View readme" id="proj-3-readme-link">↗</a>
+            </div>
+          </div>
+          <h2 class="project-card__title" id="proj-3-title">Revenue Growth Stack Template</h2>
+          <p class="project-card__desc">
+            An opinionated, modular revenue operations template covering pricing model scaffolding, upsell funnel mechanics, and AI-assisted customer segmentation logic. Developed from the First & Bowl hospitality scaling engagement — fully documented with implementation guides.
+          </p>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);margin:8px 0;">
+            <span class="badge badge--coming">Coming Soon</span>
+            <span style="font-size:12px;color:var(--color-text-tertiary);">⭐ — &nbsp;·&nbsp; 🍴 —</span>
+          </div>
+          <div class="project-card__tags">
+            <span class="project-card__tag">Revenue Ops</span>
+            <span class="project-card__tag">Hospitality</span>
+            <span class="project-card__tag">Templates</span>
+            <span class="project-card__tag">Strategy</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project-card reveal reveal-delay-1" id="project-card-portfolio-infra" aria-labelledby="proj-4-title">
+          <div class="project-card__header">
+            <span class="project-card__icon" aria-hidden="true">🏗️</span>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View this portfolio's source on GitHub" id="proj-4-github-link">gh</a>
+              <a href="index.html" class="project-card__link" aria-label="View live site" id="proj-4-live-link">↗</a>
+            </div>
+          </div>
+          <h2 class="project-card__title" id="proj-4-title">This Portfolio (Open Source)</h2>
+          <p class="project-card__desc">
+            The full source code for this portfolio — built as a 2026 best-practice demonstration of agent-assisted development infrastructure. Features agentic orchestration markdown files, vanilla JS with zero build steps, S24 Ultra dark-mode design system, and complete WCAG 2.1 semantic HTML structure.
+          </p>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);margin:8px 0;">
+            <span class="badge badge--live">Live</span>
+            <span style="font-size:12px;color:var(--color-text-tertiary);">⭐ — &nbsp;·&nbsp; 🍴 —</span>
+          </div>
+          <div class="project-card__tags">
+            <span class="project-card__tag">HTML/CSS/JS</span>
+            <span class="project-card__tag">Design System</span>
+            <span class="project-card__tag">AI-Ready</span>
+            <span class="project-card__tag">Open Source</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project-card reveal reveal-delay-2" id="project-card-agent-layer" aria-labelledby="proj-5-title">
+          <div class="project-card__header">
+            <span class="project-card__icon" aria-hidden="true">🤖</span>
+            <div class="project-card__links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-card__link" aria-label="View agent orchestration layer on GitHub" id="proj-5-github-link">gh</a>
+              <a href="#" class="project-card__link" aria-label="View documentation" id="proj-5-docs-link">↗</a>
+            </div>
+          </div>
+          <h2 class="project-card__title" id="proj-5-title">Agent Orchestration Layer</h2>
+          <p class="project-card__desc">
+            Markdown-driven agentic context system for IDE-integrated AI development workflows. Includes AGENTS.md boundary definitions, TASKS.md execution queues, PROJECT_PROGRESS.md state matrices, and TOOLS.md API contracts — the full 2026 best-practice alignment layer demonstrated in this repository.
+          </p>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);margin:8px 0;">
+            <span class="badge badge--live">Active</span>
+            <span style="font-size:12px;color:var(--color-text-tertiary);">⭐ — &nbsp;·&nbsp; 🍴 —</span>
+          </div>
+          <div class="project-card__tags">
+            <span class="project-card__tag">Markdown</span>
+            <span class="project-card__tag">Agentic AI</span>
+            <span class="project-card__tag">Dev Ops</span>
+            <span class="project-card__tag">Context Mgmt</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 6 -->
+        <article class="project-card reveal reveal-delay-3" id="project-card-upcoming" style="opacity:.65;border-style:dashed;" aria-labelledby="proj-6-title">
+          <div class="project-card__header">
+            <span class="project-card__icon" aria-hidden="true">🔮</span>
+            <div class="project-card__links">
+              <button class="project-card__link" disabled aria-disabled="true" aria-label="GitHub link not yet available">gh</button>
+            </div>
+          </div>
+          <h2 class="project-card__title" id="proj-6-title">Multi-Agent Mockup Framework</h2>
+          <p class="project-card__desc">
+            A browser-native sandbox for orchestrating and visualizing multi-agent workflows. Designed to run entirely client-side, enabling live demonstrations of agent coordination patterns without requiring a backend or external API. Planned deployment in tools.html Q4 2026.
+          </p>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle);margin:8px 0;">
+            <span class="badge badge--coming">Planned</span>
+          </div>
+          <div class="project-card__tags">
+            <span class="project-card__tag">Multi-Agent</span>
+            <span class="project-card__tag">Browser Sandbox</span>
+            <span class="project-card__tag">Visualization</span>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+
+      <!-- ── CONTRIBUTION / COLLABORATION CTA ── -->
+      <div class="card reveal" style="margin-top:48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:32px;">
+        <div>
+          <h2 style="font-size:20px;margin-bottom:8px;">Interested in Collaborating?</h2>
+          <p style="font-size:14px;color:var(--color-text-secondary);max-width:480px;">
+            All projects are open for contributions, forks, and adaptations. If you're building something in the AI integration or workflow automation space — let's connect.
+          </p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" id="collab-github-btn">Fork on GitHub</a>
+          <a href="contact.html" class="btn btn--primary" id="collab-contact-btn">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <div class="footer__brand-logo" aria-hidden="true">S</div>
+          <span class="footer__brand-name">Sean's Portfolio</span>
+        </div>
+        <p class="footer__tagline">Open-source workflow automation and AI integration projects — all production-grade and publicly available.</p>
+        <div class="footer__socials" style="margin-top:20px;">
+          <a href="https://linkedin.com" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="https://github.com" class="footer__social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
+          <a href="mailto:hello@example.com" class="footer__social-link" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Pages</p>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="tools.html" class="footer__link">Tools</a></li>
+          <li><a href="projects.html" class="footer__link">Projects</a></li>
+          <li><a href="contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Connect</p>
+        <ul class="footer__links" role="list">
+          <li><a href="https://linkedin.com" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="contact.html" class="footer__link">Hire Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Sean. All projects MIT licensed unless noted.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
