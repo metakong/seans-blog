@@ -165,234 +165,63 @@
         <p class="section-header__eyebrow">Engineering Utilities</p>
         <h1 class="section-header__title" id="tools-page-heading">Client-Side Workflow Tools</h1>
         <p class="section-header__desc">
-          All tools run entirely in your browser. No data is transmitted, stored, or tracked externally. Zero external network dependencies — just raw utility.
+          All tools run entirely in your browser. No data is transmitted, stored, or tracked externally. Zero external network dependencies.
         </p>
       </div>
 
-      <!-- Security Notice -->
-      <div class="security-notice reveal" role="note" aria-label="Privacy assurance">
-        🔒 <strong>100% Local Execution.</strong>&nbsp; All calculations happen in your browser. No API calls. No telemetry. No vendor dependencies.
+      <!-- Roadmap Transparency Notice -->
+      <div class="reveal" style="margin-bottom:40px; text-align: center;">
+        <div style="display:inline-block; max-width: 600px; padding:20px; background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-lg);">
+          <div style="font-size: 24px; margin-bottom: 8px;">🚧</div>
+          <h2 style="font-size:18px; margin-bottom:8px; color: var(--color-accent);">Developer Transparency Notice</h2>
+          <p style="font-size:14px; color:var(--color-text-secondary); line-height: 1.6;">
+            <strong>No utilities are currently live.</strong> To prioritize operational integrity and transparency, this dashboard has transitioned from conceptual calculators to a defined roadmap of consumer-focused client-side applications. These tools are under active development for 2026.
+          </p>
+        </div>
       </div>
 
-      <!-- ── TOOLS GRID ── -->
+      <!-- ── ROADMAP GRID ── -->
+      <div style="margin-bottom:16px;" class="reveal">
+        <p style="font-size:12px;font-weight:600;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:1px;">Active Roadmap & Upcoming Tools</p>
+      </div>
+
       <div class="tools-grid" id="tools-grid-container">
 
-        <!-- ── TOOL 1: AI ROI ESTIMATOR ── -->
-        <div class="tool-card reveal" id="tool-card-roi">
-          <div class="tool-card__icon" aria-hidden="true">💰</div>
-          <h2 class="tool-card__title">Automation Leverage Calculator</h2>
+        <!-- ROADMAP ITEM 1 -->
+        <div class="tool-card reveal" id="tool-card-slop-analyzer">
+          <div class="tool-card__icon" aria-hidden="true">📊</div>
+          <h2 class="tool-card__title">AI Content Utility &amp; Slop Analyzer</h2>
           <p class="tool-card__desc">
-            Calculate the structural leverage gained from a workflow automation implementation. Input baseline time costs and estimated efficiency improvements to model the resulting operational bandwidth recovery.
+            A privacy-first, client-side text analyzer designed to parse text chunks or public posts. It measures genuine semantic substance against generic, AI-generated marketing noise to score content authenticity.
           </p>
           <div class="tool-card__actions">
-            <span class="badge badge--live">Active</span>
-            <button class="btn btn--primary btn--sm"
-                    id="toggle-roi"
-                    data-tool-toggle="panel-roi"
-                    aria-expanded="false"
-                    aria-controls="panel-roi">
-              Launch Tool
-            </button>
-          </div>
-
-          <!-- EXPANDABLE PANEL -->
-          <div class="tool-panel" id="panel-roi" role="region" aria-label="AI ROI Estimator inputs">
-            <form id="roi-form" novalidate autocomplete="off">
-              <div class="tool-input-row">
-                <div class="form-group">
-                  <label class="form-label" for="roi-hours">Hours / Week on This Task</label>
-                  <input class="form-input" type="number" id="roi-hours" name="roi-hours" min="1" max="168" placeholder="e.g. 20" required />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="roi-rate">Avg. Hourly Rate ($)</label>
-                  <input class="form-input" type="number" id="roi-rate" name="roi-rate" min="1" placeholder="e.g. 65" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="roi-efficiency">
-                  Estimated Efficiency Gain:
-                  <span id="efficiency-display" style="color:var(--color-accent);font-weight:700;">40%</span>
-                </label>
-                <input class="range-input" type="range" id="roi-efficiency" name="roi-efficiency" min="1" max="100" value="40"
-                       aria-valuemin="1" aria-valuemax="100" aria-valuenow="40" />
-                <div class="range-display"><span>1%</span><span>100%</span></div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="roi-cost">Implementation Cost ($) <span style="color:var(--color-text-tertiary);">optional</span></label>
-                <input class="form-input" type="number" id="roi-cost" name="roi-cost" min="0" placeholder="e.g. 2000" />
-              </div>
-
-              <button type="submit" class="btn btn--primary" style="width:100%;" id="roi-calculate-btn">
-                Calculate ROI
-              </button>
-            </form>
-            <div id="roi-output" style="display:none;"></div>
+            <span class="badge badge--coming">Planned</span>
+            <button class="btn btn--secondary btn--sm" disabled aria-disabled="true">Coming Soon</button>
           </div>
         </div>
 
-        <!-- ── TOOL 2: WORKFLOW COMPLEXITY SCORER ── -->
-        <div class="tool-card reveal reveal-delay-1" id="tool-card-complexity">
-          <div class="tool-card__icon" aria-hidden="true">📐</div>
-          <h2 class="tool-card__title">Workflow Complexity Scorer</h2>
+        <!-- ROADMAP ITEM 2 -->
+        <div class="tool-card reveal reveal-delay-1" id="tool-card-prompt-designer">
+          <div class="tool-card__icon" aria-hidden="true">✍️</div>
+          <h2 class="tool-card__title">Interactive Prompt Designer</h2>
           <p class="tool-card__desc">
-            Assess the structural complexity of any workflow or process using a multi-factor scoring model. Identifies automation bottlenecks and prioritization signals before you commit to engineering resources.
+            Built using native HTML5 web components. Leverages Gemini Classic Gems structural patterns to allow users to interactively draft, test, and export hyper-optimized, role-bounded system prompts.
           </p>
           <div class="tool-card__actions">
-            <span class="badge badge--live">Active</span>
-            <button class="btn btn--primary btn--sm"
-                    id="toggle-complexity"
-                    data-tool-toggle="panel-complexity"
-                    aria-expanded="false"
-                    aria-controls="panel-complexity">
-              Launch Tool
-            </button>
-          </div>
-
-          <div class="tool-panel" id="panel-complexity" role="region" aria-label="Workflow complexity scorer inputs">
-            <div id="complexity-form">
-              <div class="form-group">
-                <label class="form-label" for="wf-steps">
-                  Number of Manual Steps:
-                  <span id="steps-display" style="color:var(--color-accent);font-weight:700;">8</span>
-                </label>
-                <input class="range-input" type="range" id="wf-steps" min="1" max="50" value="8"
-                       aria-valuemin="1" aria-valuemax="50" aria-valuenow="8" />
-                <div class="range-display"><span>1</span><span>50</span></div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="wf-tools">
-                  Tools / Systems Involved:
-                  <span id="tools-display" style="color:var(--color-accent);font-weight:700;">4</span>
-                </label>
-                <input class="range-input" type="range" id="wf-tools" min="1" max="20" value="4"
-                       aria-valuemin="1" aria-valuemax="20" aria-valuenow="4" />
-                <div class="range-display"><span>1</span><span>20</span></div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="wf-decisions">
-                  Decision Branch Points:
-                  <span id="decisions-display" style="color:var(--color-accent);font-weight:700;">3</span>
-                </label>
-                <input class="range-input" type="range" id="wf-decisions" min="0" max="20" value="3"
-                       aria-valuemin="0" aria-valuemax="20" aria-valuenow="3" />
-                <div class="range-display"><span>0</span><span>20</span></div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="wf-errors">
-                  Current Monthly Error Rate:
-                  <span id="errors-display" style="color:var(--color-accent);font-weight:700;">5%</span>
-                </label>
-                <input class="range-input" type="range" id="wf-errors" min="0" max="50" value="5"
-                       aria-valuemin="0" aria-valuemax="50" aria-valuenow="5" />
-                <div class="range-display"><span>0%</span><span>50%</span></div>
-              </div>
-
-              <button class="btn btn--primary" id="complexity-calc-btn" style="width:100%;">Score Workflow</button>
-            </div>
-
-            <div id="complexity-output" style="display:none;margin-top:16px;">
-              <div class="complexity-label">
-                <span id="complexity-level-label">Complexity Score</span>
-                <span id="complexity-score-display">—</span>
-              </div>
-              <div class="progress-bar complexity-bar-wrap">
-                <div class="progress-bar__fill" id="complexity-bar-fill" style="width:0%"></div>
-              </div>
-              <p id="complexity-recommendation" style="font-size:13px;color:var(--color-text-secondary);margin-top:12px;line-height:1.65;"></p>
-            </div>
+            <span class="badge badge--coming">Planned</span>
+            <button class="btn btn--secondary btn--sm" disabled aria-disabled="true">Coming Soon</button>
           </div>
         </div>
 
-        <!-- ── TOOL 3: AUTOMATION READINESS AUDITOR ── -->
-        <div class="tool-card reveal reveal-delay-2" id="tool-card-audit">
-          <div class="tool-card__icon" aria-hidden="true">✅</div>
-          <h2 class="tool-card__title">Automation Readiness Auditor</h2>
+        <!-- ROADMAP ITEM 3 -->
+        <div class="tool-card reveal reveal-delay-2" id="tool-card-prompt-library">
+          <div class="tool-card__icon" aria-hidden="true">🔍</div>
+          <h2 class="tool-card__title">Prompt Library Lookup</h2>
           <p class="tool-card__desc">
-            A structured checklist auditor that evaluates whether a given business process is ready for AI automation. Outputs a readiness score and prioritized action items to close the gap.
+            A lightweight, localized search index utility. Optimized for rapid, browser-native client-side lookup of modular system prompts and agent boundaries without external network requests.
           </p>
           <div class="tool-card__actions">
-            <span class="badge badge--live">Active</span>
-            <button class="btn btn--primary btn--sm"
-                    id="toggle-audit"
-                    data-tool-toggle="panel-audit"
-                    aria-expanded="false"
-                    aria-controls="panel-audit">
-              Launch Tool
-            </button>
-          </div>
-
-          <div class="tool-panel" id="panel-audit" role="region" aria-label="Automation readiness auditor">
-            <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:16px;">
-              Check all criteria that currently apply to your target workflow:
-            </p>
-            <div id="audit-checklist-form">
-              <fieldset style="border:none;padding:0;margin:0;">
-                <legend style="font-size:12px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">Readiness Criteria</legend>
-                <div class="audit-checklist">
-                  <label class="audit-item" id="audit-item-1">
-                    <input type="checkbox" id="audit-1" style="accent-color:var(--color-accent);" />
-                    Process runs on a predictable, repeatable schedule
-                  </label>
-                  <label class="audit-item" id="audit-item-2">
-                    <input type="checkbox" id="audit-2" style="accent-color:var(--color-accent);" />
-                    Input data is structured (spreadsheet, database, API)
-                  </label>
-                  <label class="audit-item" id="audit-item-3">
-                    <input type="checkbox" id="audit-3" style="accent-color:var(--color-accent);" />
-                    Clear, documented rules govern every decision point
-                  </label>
-                  <label class="audit-item" id="audit-item-4">
-                    <input type="checkbox" id="audit-4" style="accent-color:var(--color-accent);" />
-                    Current process generates measurable performance data
-                  </label>
-                  <label class="audit-item" id="audit-item-5">
-                    <input type="checkbox" id="audit-5" style="accent-color:var(--color-accent);" />
-                    Stakeholders have agreed on success metrics upfront
-                  </label>
-                  <label class="audit-item" id="audit-item-6">
-                    <input type="checkbox" id="audit-6" style="accent-color:var(--color-accent);" />
-                    Existing tooling has accessible API or webhook capability
-                  </label>
-                  <label class="audit-item" id="audit-item-7">
-                    <input type="checkbox" id="audit-7" style="accent-color:var(--color-accent);" />
-                    Error recovery procedures are documented and tested
-                  </label>
-                  <label class="audit-item" id="audit-item-8">
-                    <input type="checkbox" id="audit-8" style="accent-color:var(--color-accent);" />
-                    At least one team member owns implementation accountability
-                  </label>
-                </div>
-              </fieldset>
-              <button class="btn btn--primary" id="audit-run-btn" style="width:100%;margin-top:16px;">Run Audit</button>
-            </div>
-
-            <div id="audit-output" style="display:none;margin-top:16px;">
-              <div class="complexity-label">
-                <span>Readiness Score</span>
-                <span id="audit-score-label">—</span>
-              </div>
-              <div class="progress-bar" style="margin-bottom:12px;">
-                <div class="progress-bar__fill" id="audit-bar-fill" style="width:0%"></div>
-              </div>
-              <div id="audit-result-items" class="audit-checklist"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── TOOL 4: COMING SOON PLACEHOLDER ── -->
-        <div class="tool-card reveal reveal-delay-3" id="tool-card-coming" style="opacity:.6;">
-          <div class="tool-card__icon" aria-hidden="true">🔭</div>
-          <h2 class="tool-card__title">Inference Cost Modeler</h2>
-          <p class="tool-card__desc">
-            Estimate LLM inference costs across provider APIs (GPT-4o, Claude 3.5, Gemini Pro) based on expected token payloads and request volumes. Model architectural costs before committing to a specific vendor.
-          </p>
-          <div class="tool-card__actions">
-            <span class="badge badge--coming">In Development</span>
+            <span class="badge badge--coming">Planned</span>
             <button class="btn btn--secondary btn--sm" disabled aria-disabled="true">Coming Soon</button>
           </div>
         </div>
@@ -411,11 +240,11 @@
           <div class="footer__brand-logo" aria-hidden="true">S</div>
           <span class="footer__brand-name">Sean's Portfolio</span>
         </div>
-        <p class="footer__tagline">Operations engineer and systems thinker. All tools run 100% locally — your data never leaves your browser.</p>
+        <p class="footer__tagline">Operations engineer and systems thinker. Future tools will run 100% locally — your data never leaves your browser.</p>
         <div class="footer__socials" style="margin-top:20px;">
-          <a href="https://linkedin.com" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
-          <a href="https://github.com" class="footer__social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
-          <a href="mailto:hello@example.com" class="footer__social-link" aria-label="Email">@</a>
+          <a href="https://www.linkedin.com/in/sean-deardorff/" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="https://github.com/metakong" class="footer__social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
+          <a href="mailto:contact@whatisaislop.com" class="footer__social-link" aria-label="Email">@</a>
         </div>
       </div>
       <div>
@@ -430,136 +259,22 @@
       <div>
         <p class="footer__col-title">Connect</p>
         <ul class="footer__links" role="list">
-          <li><a href="https://linkedin.com" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="https://github.com" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="contact.html" class="footer__link">Hire Me</a></li>
+          <li><a href="https://www.linkedin.com/in/sean-deardorff/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/metakong" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="contact.html" class="footer__link">Get in Touch</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>© 2026 Sean. Zero external dependencies.</span>
-      <span>Privacy-first tooling.</span>
+      <span>© 2026 Sean Deardorff. Zero external dependencies.</span>
+      <span>Privacy-first roadmap.</span>
     </div>
   </div>
 </footer>
 
 <script src="app.js"></script>
-<script>
-// Tools-page specific wiring (beyond app.js base)
-document.addEventListener('DOMContentLoaded', () => {
-
-  // Range slider live display sync
-  const sliders = [
-    ['roi-efficiency', 'efficiency-display', v => v + '%'],
-    ['wf-steps',       'steps-display',      v => v],
-    ['wf-tools',       'tools-display',      v => v],
-    ['wf-decisions',   'decisions-display',  v => v],
-    ['wf-errors',      'errors-display',     v => v + '%'],
-  ];
-
-  sliders.forEach(([sliderId, displayId, fmt]) => {
-    const slider = document.getElementById(sliderId);
-    const display = document.getElementById(displayId);
-    if (!slider || !display) return;
-    slider.addEventListener('input', () => {
-      display.textContent = fmt(slider.value);
-      slider.setAttribute('aria-valuenow', slider.value);
-    });
-  });
-
-  // Workflow Complexity Scorer
-  const complexityBtn = document.getElementById('complexity-calc-btn');
-  if (complexityBtn) {
-    complexityBtn.addEventListener('click', () => {
-      const steps     = parseInt(document.getElementById('wf-steps').value) || 0;
-      const tools     = parseInt(document.getElementById('wf-tools').value) || 0;
-      const decisions = parseInt(document.getElementById('wf-decisions').value) || 0;
-      const errors    = parseInt(document.getElementById('wf-errors').value) || 0;
-
-      // Weighted complexity formula
-      const score = Math.min(100, Math.round(
-        (steps / 50 * 30) +
-        (tools / 20 * 25) +
-        (decisions / 20 * 25) +
-        (errors / 50 * 20)
-      ));
-
-      const output = document.getElementById('complexity-output');
-      const barFill = document.getElementById('complexity-bar-fill');
-      const scoreDisplay = document.getElementById('complexity-score-display');
-      const recommendation = document.getElementById('complexity-recommendation');
-
-      let levelLabel, rec, barColor;
-      if (score < 30) {
-        levelLabel = 'Low Complexity'; barColor = 'var(--color-success)';
-        rec = '✅ This workflow is an excellent automation candidate. Low decision branching and tool count means quick implementation cycles with minimal edge-case handling.';
-      } else if (score < 60) {
-        levelLabel = 'Moderate Complexity'; barColor = 'var(--color-warning)';
-        rec = '⚠️ Moderate complexity detected. Consider decomposing this workflow into 2–3 sub-processes before automating. Prioritize the highest-error segments first for maximum ROI.';
-      } else if (score < 80) {
-        levelLabel = 'High Complexity'; barColor = '#FF9F0A';
-        rec = '🔶 High complexity. A phased automation approach is recommended — start with the deterministic, rule-based steps and layer in AI-assisted decision making over 2–3 sprints.';
-      } else {
-        levelLabel = 'Very High Complexity'; barColor = 'var(--color-error)';
-        rec = '🔴 This workflow requires significant simplification before automation. Consider a process reengineering sprint first. Automation of a broken process just produces broken results faster.';
-      }
-
-      document.getElementById('complexity-level-label').textContent = levelLabel;
-      scoreDisplay.textContent = `${score}/100`;
-      barFill.style.width = `${score}%`;
-      barFill.style.background = barColor;
-      recommendation.textContent = rec;
-
-      output.style.display = 'block';
-      if (window.SeanPortfolio) window.SeanPortfolio.showToast(`Complexity score: ${score}/100`, 'info');
-    });
-  }
-
-  // Automation Readiness Auditor
-  const auditBtn = document.getElementById('audit-run-btn');
-  if (auditBtn) {
-    auditBtn.addEventListener('click', () => {
-      const checkboxes = document.querySelectorAll('#audit-checklist-form input[type="checkbox"]');
-      const labels = [
-        'Predictable, repeatable schedule',
-        'Structured input data',
-        'Documented decision rules',
-        'Measurable performance data',
-        'Agreed success metrics',
-        'API/webhook access',
-        'Documented error recovery',
-        'Clear implementation owner'
-      ];
-      const weights = [15, 20, 20, 15, 10, 10, 5, 5];
-      let score = 0;
-      const results = [];
-
-      checkboxes.forEach((cb, i) => {
-        const passed = cb.checked;
-        score += passed ? (weights[i] || 10) : 0;
-        results.push({ label: labels[i], passed, weight: weights[i] });
-      });
-
-      const output = document.getElementById('audit-output');
-      const barFill = document.getElementById('audit-bar-fill');
-      const scoreLabel = document.getElementById('audit-score-label');
-      const resultItems = document.getElementById('audit-result-items');
-
-      scoreLabel.textContent = `${score}/100`;
-      barFill.style.width = `${score}%`;
-      barFill.style.background = score >= 70 ? 'var(--color-success)' : score >= 40 ? 'var(--color-warning)' : 'var(--color-error)';
-
-      resultItems.innerHTML = results.map(r => `
-        <div class="audit-item ${r.passed ? 'pass' : 'fail'}">
-          <div class="audit-dot ${r.passed ? 'pass' : 'fail'}"></div>
-          <span style="flex:1;">${r.label}</span>
-          <span style="font-size:11px;color:var(--color-text-tertiary);">${r.weight}pts</span>
-        </div>
-      `).join('');
-
-      output.style.display = 'block';
-      const status = score >= 70 ? '✅ Ready to automate!' : score >= 40 ? '⚠️ Partially ready' : '🔴 Not yet ready';
-      if (window.SeanPortfolio) window.SeanPortfolio.showToast(`Readiness: ${score}/100 — ${status}`, 'info', 4000);
+</body>
+</html>ow.SeanPortfolio.showToast(`Readiness: ${score}/100 — ${status}`, 'info', 4000);
     });
   }
 });
