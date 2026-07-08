@@ -113,7 +113,7 @@ The Bills' front office has been doing exactly this for five years. They built a
 
 This portfolio is doing the same thing: start fast, get feedback, refactor aggressively, ship the polished version.
 
-**By July 2027, both this portfolio and the Buffalo Bills will be championship-caliber.** If the Bills don't make the Super Bowl in 2027, at least this site will have better documentation than most enterprise software companies.
+**By July 2027, both this portfolio and the Buffalo Bills will be championship-caliber.** If the Bills don't make the Super Bowl in 2027, at least this site will have better documentation than most enterprise software companies.  (**User Comment:  SUPER disappointed in you for this one, Claude.**)
 
 ---
 
@@ -131,7 +131,7 @@ This portfolio is doing the same thing: start fast, get feedback, refactor aggre
 - **GitHub Profile:** [github.com/metakong](https://github.com/metakong)
 - **LinkedIn:** [linkedin.com/in/sean-deardorff](https://www.linkedin.com/in/sean-deardorff/)
 - **Email:** contact@whatisaislop.com
-- **Live Site:** [This repository, hosted on GitHub Pages]
+- **Live Site:** [WhatIsAISlop.com](https://whatisaislop.com)
 
 ---
 
