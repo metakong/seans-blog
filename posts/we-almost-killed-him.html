@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A General Manager's honest accounting of the decisions that ended a business — and nearly ended a man's life. What I got wrong on bad hires, terminations I never got, and the insurance gap I deprioritized." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="We Almost Killed Him | Sean Deardorff" />
+  <meta property="og:description" content="When to cut ties, when to hold the line, and what I got wrong. A post-mortem on the decisions that led to a 6 a.m. phone call and a motorcyclist with a broken neck." />
+  <meta property="og:type" content="article" />
+  <title>We Almost Killed Him | Sean Deardorff</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── Post-specific layout ── */
+    .post-hero {
+      padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    }
+    .post-hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .post-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .post-hero__back:hover { color: var(--color-accent); }
+    .post-hero__back::before { content: '←'; }
+
+    .post-hero__title {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+    }
+    .post-hero__subtitle {
+      font-size: var(--font-size-md);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: var(--space-8);
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      padding: var(--space-4) 0;
+      border-top: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
+      margin-bottom: var(--space-12);
+    }
+    .post-meta__item {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .post-meta__item strong {
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    /* ── Article body ── */
+    .post-body {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: var(--font-size-md);
+      line-height: 1.8;
+      color: var(--color-text-primary);
+    }
+    .post-body p {
+      margin-bottom: var(--space-6);
+    }
+    .post-body h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--color-text-primary);
+      margin: var(--space-12) 0 var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+    .post-body hr {
+      border: none;
+      border-top: 1px solid var(--color-border-subtle);
+      margin: var(--space-10) 0;
+    }
+    .post-body strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+    .post-body ul, .post-body ol {
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+    .post-body li {
+      margin-bottom: var(--space-2);
+    }
+    .post-body blockquote {
+      border-left: 3px solid var(--color-accent);
+      padding-left: var(--space-5);
+      margin: var(--space-8) 0;
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+    .post-body .post-footer-note {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border-subtle);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+    .post-body .post-footer-note a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .post-body .post-footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Key takeaways block ── */
+    .takeaways {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-accent);
+      border-radius: var(--radius-md);
+      padding: var(--space-6) var(--space-8);
+      margin: var(--space-10) 0;
+    }
+    .takeaways__title {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+    }
+    .takeaways ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .takeaways ul li {
+      padding: var(--space-2) 0;
+      padding-left: var(--space-5);
+      position: relative;
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+    .takeaways ul li:last-child { border-bottom: none; }
+    .takeaways ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    /* ── Post nav (prev/next) ── */
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--color-border-subtle);
+      margin-top: var(--space-16);
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .post-nav__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .post-nav__link:hover { color: var(--color-accent); }
+    .post-nav__link--back::before { content: '← '; }
+  </style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ── NAVIGATION ── -->
+<header role="banner">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__pill">
+      <a href="../index.html" class="nav__brand" aria-label="Sean's portfolio home">
+        <div class="nav__logo" aria-hidden="true">S</div>
+        <span class="nav__brand-text">Sean</span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="../index.html" class="nav__link" id="nav-home">Home</a></li>
+        <li><a href="../tools.html" class="nav__link" id="nav-tools">Tools</a></li>
+        <li><a href="../projects.html" class="nav__link" id="nav-projects">Projects</a></li>
+        <li><a href="../contact.html" class="nav__link" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <a href="../contact.html" class="nav__cta" id="nav-hire-btn">Hire Me →</a>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close navigation">✕</button>
+  <a href="../index.html" class="nav__mobile-link">Home</a>
+  <a href="../tools.html" class="nav__mobile-link">Tools</a>
+  <a href="../projects.html" class="nav__mobile-link">Projects</a>
+  <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  <a href="../contact.html" class="btn btn--primary" style="margin-top:16px;">Hire Me →</a>
+</div>
+
+<!-- ── POST CONTENT ── -->
+<main id="main-content">
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero__eyebrow">
+        <a href="../index.html#blog-feed" class="post-hero__back">All Posts</a>
+        <span class="card__tag">Operations</span>
+        <span class="badge badge--live">Published</span>
+      </div>
+
+      <h1 class="post-hero__title">
+        We Almost Killed Him: When to Cut Ties,<br class="d-none d-md-block" />
+        When to Hold the Line, and What I Got Wrong
+      </h1>
+
+      <p class="post-hero__subtitle">
+        A General Manager's honest accounting of a string of deliberate choices
+        that drew a straight line to a 6 a.m. phone call — and a motorcyclist
+        stopped at a red light.
+      </p>
+
+      <div class="post-meta">
+        <span class="post-meta__item"><strong>Sean Deardorff</strong></span>
+        <span class="post-meta__item">·</span>
+        <span class="post-meta__item">July 2026</span>
+        <span class="post-meta__item">·</span>
+        <span class="post-meta__item">~8 min read</span>
+        <span class="post-meta__item">·</span>
+        <span class="post-meta__item">Operations · Leadership · Post-Mortem</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <article class="post-body" aria-label="Post content">
+
+        <p>My phone rang at 6 a.m.</p>
+
+        <p>I didn't need a single spoken word. The second I answered and heard distant sirens bleeding through the line, I knew. The business was gone. Not struggling. Not bleeding. Gone.</p>
+
+        <p>But that's where this story ends. Not where it starts. And if I just drop you into the wreckage without the context, you'll miss the part that actually matters — the part where I made a string of very deliberate choices that, in hindsight, drew a straight line directly to that phone call.</p>
+
+        <p>So let's go back to the beginning. Specifically, to the moment I decided to take the job in the first place.</p>
+
+        <hr />
+
+        <h2>The Ceiling</h2>
+
+        <p>I didn't take the General Manager role because somebody recruited me or because the offer was impossible to turn down. The comp was fine. The role was interesting enough. But the real reason — the reason I don't always say out loud — was that I had run completely out of ceiling at my prior employer.</p>
+
+        <p>Not fired. Not passed over in some dramatic fashion. I just looked at the organizational chart one day and saw exactly where I was, exactly where the opportunities weren't, and exactly how long I'd been watching both of those things stay exactly the same. That's a specific kind of misery. The slow kind. The kind where nothing is technically wrong but nothing is actually moving either.</p>
+
+        <p>So I cut ties. Clean. No drama.</p>
+
+        <p>I said yes to a commercial floor maintenance company — a sole proprietorship where the owner personally worked about a third of the labor hours every single week — with the specific mandate of converting it into an absentee-owner profit machine. The owner wanted to step back. I was hired because I could sell. Those two facts created both the opportunity and the pressure that would define the next two years of my life.</p>
+
+        <hr />
+
+        <h2>Year One: What Actually Worked</h2>
+
+        <p>The first problem was structural. You can't grow a business and simultaneously absorb 80 hours of manual labor per week. Something has to give. And since the client base had been acquired mostly by underbidding in a saturated market, we had a margin problem sitting underneath the labor problem. Fix margin first. Everything else follows.</p>
+
+        <p>So I went hunting for pain. Literally.</p>
+
+        <p>After 5 p.m., when the businesses in town were closed for the day, I drove around looking in windows. Not metaphorically. Actually pulled up to storefronts and looked through the glass at their floors. I was building a list of the 50 dirtiest businesses in that market — the ones who needed us most, whether they knew it yet or not.</p>
+
+        <p>Step two: I bought 100 perfectly clean white wedding invitations from Office Depot. I printed 50 of them. Mailed each one to a prospect with an offer for a free consultation and a quote.</p>
+
+        <p>10% response rate. 100% contract close rate. Bingo. Breathing room.</p>
+
+        <p>With new contracts in hand and new hires incoming, I needed the team bought in fast. I ran the numbers in QuickBooks and found something interesting: if I was willing to cut my own planned salary down to match the crew's new pay rate, I could give every single one of them a 25% raise. Done. I called a meeting, put the actual budget printouts on the table, and told them exactly what I was doing and why.</p>
+
+        <p>If you ever want to generate real loyalty from a team, do that. Show them the numbers. Cut your own pay. Watch what happens to the energy in the room.</p>
+
+        <p>But loyalty without accountability is just enthusiasm. So I also built a 50-point quality scorecard — timed every task at every account myself first to set the performance benchmarks — and distributed a copy to the desk of every employee at every client site. The clients became my quality control team. Ground-truth feedback. No filter. I knew what was happening on every job whether I was there or not.</p>
+
+        <p>First year closed out well. Margins up. Team aligned. Client retention solid. The foundation was real.</p>
+
+        <p>Then I hired someone I shouldn't have.</p>
+
+        <hr />
+
+        <h2>The Hire I Knew Was Wrong</h2>
+
+        <p>My background before this role was psychology. Not casually — obsessively, from age 13 forward, including serious study of counter-terrorism interrogation methods and behavioral lie detection. I understood exactly what I was picking up on during that interview. The micro-tells were there. My gut was sending a clear signal.</p>
+
+        <p>I hired him anyway.</p>
+
+        <p>He had over a decade listed on his resume as a floor maintenance team lead at a major national chain. Turning that down felt irresponsible given how fast I needed to staff up. Speed beat instinct. That's the short version.</p>
+
+        <p>Less than two months later, he burned through $600 in specialty tiling at a client site and then no-called, no-showed his very next job. We didn't lose the client where the tiles went sideways — that was replaceable. We lost the client he ghosted, and we lost them fast, because their contract was already up for renewal and they had found our replacement before they even picked up the phone to tell me nobody showed up.</p>
+
+        <p>I recovered. Part-timers absorbed his hours. The business moved on.</p>
+
+        <p>I wish the next mistake had been that recoverable.</p>
+
+        <hr />
+
+        <h2>The Problem I Couldn't Fix</h2>
+
+        <p>Our most tenured employee had a substance abuse history. The owner knew it going in — the hire was partly a goodwill gesture, a genuine attempt to give someone a second chance. That's a decent human impulse. I don't knock it.</p>
+
+        <p>What I do know is that by the time I was managing this company, minor issues had become serious ones. Meth had replaced alcohol. He had a wife. Three kids, the youngest just born. And no matter how many conversations I had, no matter how many times I showed up at his house, no matter how clearly I documented the quality drops and the conflicts with other employees — the owner would not authorize the termination. He'd known this man far longer than he'd known me. That relationship carried weight I couldn't override.</p>
+
+        <p>So I managed around it. For over a year.</p>
+
+        <p>I want to be precise about what that cost: it cost me sleep, it cost other good employees who got tired of the instability, and it cost me the credibility that comes from actually running the team you're supposed to be running. You cannot build an accountable operation while simultaneously carrying someone who is visibly exempt from accountability. The crew sees it. The clients feel it eventually.</p>
+
+        <p>I knew all of that. I endured anyway.</p>
+
+        <p>Until 6 a.m.</p>
+
+        <hr />
+
+        <h2>The Call</h2>
+
+        <p>His voice. Sirens in the background.</p>
+
+        <p>He had fallen asleep at the wheel of our company truck — flooring equipment trailer in tow — on a state highway at approximately 60 miles per hour, and rear-ended a motorcyclist who was stopped at a red light.</p>
+
+        <p>Broken neck. Broken back. Two broken arms. Two broken legs.</p>
+
+        <p>We almost killed him.</p>
+
+        <p>Everything worth less than human life was unsalvageable. The truck. The trailer. The equipment. The insurance policy didn't cover the liability. The business was finished in a single morning.</p>
+
+        <p>The owner kept his personal assets intact only because I had restructured the business as an LLC earlier in my tenure. That decision — made quietly, early, for entirely routine reasons — turned out to be the one thing standing between the owner and complete personal financial ruin.</p>
+
+        <p>And the motorcyclist survived. That fact sits with me differently than everything else.</p>
+
+        <hr />
+
+        <h2>What I Got Wrong</h2>
+
+        <p>I've had years to work through this. I'm not interested in softening it.</p>
+
+        <p><strong>On the bad hire:</strong> I had the training. I had the read on him. I ignored both because I was in a hurry. There is no version of that story where the right call wasn't to slow down and find someone better, even if it cost me two more weeks. Speed is not a valid reason to override a well-calibrated gut signal. I knew that before I ever walked into that interview. I chose to forget it when it was inconvenient.</p>
+
+        <p><strong>On the termination I never got:</strong> This one is harder, because the owner's authority over that decision was real and legitimate. But I should have been building a paper trail from month one — not to be vindictive, but because documented performance decline is the only thing that gives a manager actual leverage in a conversation about termination. I had notes. I had some records. I did not have the kind of airtight, date-stamped, pattern-of-failure documentation that removes the emotional element from the conversation and makes the business case undeniable. If I had built that case systematically from the first sign of serious regression, the conversation with the owner looks different. Maybe the outcome does too.</p>
+
+        <p><strong>On the insurance:</strong> I reviewed the policy when I came on board. I flagged the liability gaps in a general sense. I didn't push hard enough or fast enough to get them fixed. A commercial truck and trailer operating on public highways with a team of employees who were not fully vetted for road safety had a coverage gap that I identified and then deprioritized. That deprioritization was wrong. Full stop.</p>
+
+        <p><strong>On the ceiling I left:</strong> Here's the one I don't say often enough. I cut ties with my prior employer because I saw no room to grow. That instinct was right. But the lesson I should have taken into the GM role — and didn't, not fully — is that knowing when to cut ties is a skill that applies to more than just jobs. It applies to hires. It applies to employees who are burning the culture. It applies to business structures that carry unacceptable risk. I was willing to make the clean break when it applied to my own career. I was not nearly aggressive enough about applying that same standard to the decisions I was responsible for inside the business.</p>
+
+        <p>The owner could not fire someone he'd known for years. I understood that emotionally. But my job was not to manage his emotions about a difficult personnel decision — my job was to protect the business. I let one blur into the other for too long.</p>
+
+        <hr />
+
+        <h2>The Real Lesson</h2>
+
+        <p>There isn't a tidy framework here. I'm not going to hand you a four-step process because this story doesn't reduce to one.</p>
+
+        <p>What I can tell you is this: every catastrophic outcome I've ever seen — in this business, in others, in hiring, in operations — had a decision point upstream where someone knew something and chose not to act on it. Not because they were incompetent. Because acting on it was uncomfortable, or expensive, or politically complicated, or just slower than the pace they were trying to keep.</p>
+
+        <p>I had multiple decision points in this story where I knew something and didn't act on it with full force.</p>
+
+        <p>The motorcyclist with the broken neck, the broken back, the four broken limbs — he is the cost of that pattern. He didn't get a vote. He just stopped at a red light.</p>
+
+        <p>I'm not telling this story because it's a good look. I'm telling it because the honest accounting of what I did wrong is the only version of it that's actually useful to anyone reading it. Cleaned-up failure stories teach nothing. The raw ones — the ones where you sit with exactly what you chose and exactly what it cost — those are the ones worth reading.</p>
+
+        <div class="takeaways">
+          <div class="takeaways__title">The Four Rules I Carry Forward</div>
+          <ul>
+            <li>Cut ties when the ceiling is real.</li>
+            <li>Build the paper trail before you need it.</li>
+            <li>Trust the read you spent years developing.</li>
+            <li>Don't let the pace you're moving at convince you there's no time to do the thing you already know needs doing.</li>
+          </ul>
+        </div>
+
+        <p class="post-footer-note">
+          Sean Deardorff is the founder of <a href="https://thedsiecodex.com" target="_blank" rel="noopener noreferrer">The DSIE Codex</a>.
+          This blog exists as the long-form extension of his LinkedIn writing — the place where the stories
+          that won't fit in 3,000 characters get finished properly.
+        </p>
+
+      </article>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <a href="../index.html#blog-feed" class="post-nav__link post-nav__link--back">All Posts</a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <div class="footer__brand-logo" aria-hidden="true">S</div>
+          <span class="footer__brand-name">Sean's Portfolio</span>
+        </div>
+        <p class="footer__tagline">
+          Operations engineer and systems thinker. Documenting the frameworks, not the finished products — so the methodology stays transferable.
+        </p>
+        <div class="footer__socials" style="margin-top:20px;">
+          <a href="https://www.linkedin.com/in/sean-deardorff/" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="https://github.com/metakong" class="footer__social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">gh</a>
+          <a href="mailto:contact@whatisaislop.com" class="footer__social-link" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Pages</p>
+        <ul class="footer__links" role="list">
+          <li><a href="../index.html" class="footer__link">Home</a></li>
+          <li><a href="../tools.html" class="footer__link">Tools</a></li>
+          <li><a href="../projects.html" class="footer__link">Projects</a></li>
+          <li><a href="../contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Connect</p>
+        <ul class="footer__links" role="list">
+          <li><a href="https://www.linkedin.com/in/sean-deardorff/" class="footer__link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/metakong" class="footer__link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="../contact.html" class="footer__link">Get in Touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Sean Deardorff. Zero external dependencies. Fully open source.</span>
+      <span>Built for depth, not for clicks.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

@@ -198,6 +198,7 @@ function initBlogTracking() {
     card.addEventListener('click', (e) => {
       const postId = card.dataset.postId;
       const postTitle = card.dataset.postTitle || `Post #${postId}`;
+      const postUrl = card.dataset.postUrl;
 
       // Lightweight event log (console + sessionStorage)
       const log = JSON.parse(sessionStorage.getItem('clickLog') || '[]');
@@ -212,8 +213,17 @@ function initBlogTracking() {
 
       console.info(`[ANALYTICS] Blog card clicked: "${postTitle}" (ID: ${postId})`);
 
-      // Future: swap with GA4 / Plausible hook here
-      // gtag('event', 'blog_card_click', { post_id: postId });
+      if (postUrl) {
+        window.location.href = postUrl;
+      }
+    });
+
+    // Keyboard accessibility: Enter/Space triggers click
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
     });
   });
 }
