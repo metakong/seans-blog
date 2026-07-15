@@ -429,16 +429,17 @@ function initStatCounters() {
    * @param {Element} el
    * @param {number} target
    * @param {string} suffix
+   * @param {string} prefix
    * @param {number} duration - ms
    */
-  function animateCount(el, target, suffix = '', duration = 1200) {
+  function animateCount(el, target, suffix = '', prefix = '', duration = 1200) {
     const start = performance.now();
     const update = (now) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3); // cubic ease-out
       const current = Math.floor(eased * target);
-      el.textContent = current.toLocaleString() + suffix;
+      el.textContent = prefix + current.toLocaleString() + suffix;
       if (progress < 1) requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
@@ -450,7 +451,8 @@ function initStatCounters() {
         const el = entry.target;
         const target = parseFloat(el.dataset.count || '0');
         const suffix = el.dataset.suffix || '';
-        animateCount(el, target, suffix);
+        const prefix = el.dataset.prefix || '';
+        animateCount(el, target, suffix, prefix);
         observer.unobserve(el);
       }
     });
@@ -660,7 +662,7 @@ function boot() {
   initSmoothAnchors();
   initPageFade();
 
-  console.info('%c Sean\'s Portfolio %c v1.0.0 ', 'background:#3E91FF;color:#fff;font-weight:700;padding:2px 6px;border-radius:4px 0 0 4px;', 'background:#121212;color:#E5E5E7;padding:2px 6px;border-radius:0 4px 4px 0;');
+  console.info('%c Sean\'s Blog — What is AI Slop? %c v1.1.0 ', 'background:#3E91FF;color:#fff;font-weight:700;padding:2px 6px;border-radius:4px 0 0 4px;', 'background:#121212;color:#E5E5E7;padding:2px 6px;border-radius:0 4px 4px 0;');
 }
 
 if (document.readyState === 'loading') {
