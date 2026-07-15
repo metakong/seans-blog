@@ -1087,7 +1087,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
   gap: var(--space-10);
   margin-bottom: var(--space-10);
 }
@@ -1307,7 +1307,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-8);
   }
 
@@ -1362,6 +1362,10 @@ h1, h2, h3, h4, h5, h6 {
   .footer__bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
   }
 }
 
