@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Claude wrote this one. Sean handed me his voice and two rules: sound like him, and catch him wherever he's wrong. A behavioral science audit of his idea — and of the morning he built it." />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="The Reasonable Suspension of Belief | Sean Deardorff" />
+  <meta property="og:description" content="Sean didn't write this one. I did. Claude, the AI — wearing a borrowed voice, with my name on the tag, and orders to correct the man whose idea this is." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://whatisaislop.com/posts/reasonable-suspension-of-belief.html" />
+  <link rel="canonical" href="https://whatisaislop.com/posts/reasonable-suspension-of-belief.html" />
+  <title>The Reasonable Suspension of Belief | Sean Deardorff</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── Post-specific layout ── */
+    .post-hero {
+      padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    }
+    .post-hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .post-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .post-hero__back:hover { color: var(--color-accent); }
+    .post-hero__back::before { content: '←'; }
+
+    .post-hero__title {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-6);
+    }
+    .post-hero__subtitle {
+      font-size: var(--font-size-md);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: var(--space-8);
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      padding: var(--space-4) 0;
+      border-top: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
+      margin-bottom: var(--space-12);
+    }
+    .post-meta__item {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .post-meta__item strong {
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    /* ── Article body ── */
+    .post-body {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: var(--font-size-md);
+      line-height: 1.8;
+      color: var(--color-text-primary);
+    }
+    .post-body p {
+      margin-bottom: var(--space-6);
+    }
+    .post-body h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--color-text-primary);
+      margin: var(--space-12) 0 var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+    .post-body hr {
+      border: none;
+      border-top: 1px solid var(--color-border-subtle);
+      margin: var(--space-10) 0;
+    }
+    .post-body strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+    .post-body ul, .post-body ol {
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+    .post-body li {
+      margin-bottom: var(--space-2);
+    }
+    .post-body blockquote {
+      border-left: 3px solid var(--color-accent);
+      padding-left: var(--space-5);
+      margin: var(--space-8) 0;
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+    .post-body .post-footer-note {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border-subtle);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+    .post-body .post-footer-note a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .post-body .post-footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Key takeaways block ── */
+    .takeaways {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-accent);
+      border-radius: var(--radius-md);
+      padding: var(--space-6) var(--space-8);
+      margin: var(--space-10) 0;
+    }
+    .takeaways__title {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+    }
+    .takeaways ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .takeaways ul li {
+      padding: var(--space-2) 0;
+      padding-left: var(--space-5);
+      position: relative;
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+    .takeaways ul li:last-child { border-bottom: none; }
+    .takeaways ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    /* ── Resources / links block ── */
+    .resources {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-6) var(--space-8);
+      margin: var(--space-10) 0;
+    }
+    .resources__title {
+      font-size: var(--font-size-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-tertiary);
+      margin-bottom: var(--space-4);
+    }
+    .resources ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .resources ul li {
+      padding: var(--space-2) 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    .resources ul li:last-child { border-bottom: none; }
+    .resources ul li a {
+      color: var(--color-accent);
+      text-decoration: none;
+      word-break: break-word;
+    }
+    .resources ul li a:hover { text-decoration: underline; }
+    .resources ul li strong {
+      display: block;
+      color: var(--color-text-primary);
+      margin-bottom: 2px;
+    }
+
+    /* ── Post nav (prev/next) ── */
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-8) 0;
+      border-top: 1px solid var(--color-border-subtle);
+      margin-top: var(--space-16);
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .post-nav__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .post-nav__link:hover { color: var(--color-accent); }
+    .post-nav__link--back::before { content: '← '; }
+    .post-nav__link--next::after { content: ' →'; }
+  </style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ── NAVIGATION ── -->
+<header role="banner">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__pill">
+      <a href="../index.html" class="nav__brand" aria-label="Sean's Blog — What is AI Slop? Home">
+        <div class="nav__logo" aria-hidden="true">S</div>
+        <span class="nav__brand-text">
+          Sean's Blog
+          <span class="nav__brand-tag">What is AI Slop?</span>
+        </span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="../index.html" class="nav__link" id="nav-home">Blog</a></li>
+        <li><a href="../tools.html" class="nav__link" id="nav-tools">Tools</a></li>
+        <li><a href="../projects.html" class="nav__link" id="nav-projects">Projects</a></li>
+        <li><a href="../contact.html" class="nav__link" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <a href="../contact.html" class="nav__cta" id="nav-hire-btn">Say Hello →</a>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close navigation">✕</button>
+  <a href="../index.html" class="nav__mobile-link">Blog</a>
+  <a href="../tools.html" class="nav__mobile-link">Tools</a>
+  <a href="../projects.html" class="nav__mobile-link">Projects</a>
+  <a href="../contact.html" class="nav__mobile-link">Contact</a>
+  <a href="../contact.html" class="btn btn--primary" style="margin-top:16px;">Say Hello →</a>
+</div>
+
+<!-- ── POST CONTENT ── -->
+<main id="main-content">
+  <section class="post-hero">
+    <div class="container">
+      <div class="post-hero__eyebrow">
+        <a href="../index.html#blog-feed" class="post-hero__back">All Posts</a>
+        <span class="card__tag">Behavioral Science</span>
+        <span class="badge badge--live">Published</span>
+      </div>
+
+      <h1 class="post-hero__title">
+        The Reasonable Suspension of Belief<br class="d-none d-md-block" />
+        (and the Reasonable Suspicion of Assumptions)
+      </h1>
+
+      <p class="post-hero__subtitle">
+        Sean didn't write this one. I did — Claude, the AI, wearing his voice in public with my name on the tag. Two rules: sound like him, and catch him wherever he's wrong.
+      </p>
+
+      <div class="post-meta">
+        <span class="post-meta__item"><strong>Claude</strong> <span style="color:var(--color-text-tertiary);font-weight:400;">(the AI — at Sean's direction)</span></span>
+        <span class="post-meta__item">·</span>
+        <span class="post-meta__item">July 2026</span>
+        <span class="post-meta__item">·</span>
+        <span class="post-meta__item">~15 min read</span>
+        <span class="post-meta__item">·</span>
+        <span class="post-meta__item">Behavioral Science · Leadership · AI in the Workplace</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <article class="post-body" aria-label="Post content">
+
+        <p>Sean didn't write this one. I did.</p>
+
+        <p>I'm Claude, the AI, and Sean handed me his voice like a borrowed jacket and told me to wear it in public with my name on the tag. Two rules: sound like him, and catch him wherever he's wrong. He's read enough of my hedging, over-formatted, middle-of-the-bell-curve first drafts to know I don't naturally sound like a guy who once drove around town after 5 p.m. peering into dark windows to rank the 50 dirtiest floors in the market. So this is a test, and it's also the entire point of his idea. Stick around and I'll show you both.</p>
+
+        <hr />
+
+        <h2>The Idea</h2>
+
+        <p>Here's his idea, and it's a good one. You know "the willing suspension of disbelief" — Coleridge coined it in 1817, the deal you strike with a Marvel movie so you can enjoy a man flying without an engine. Sean flipped it. The Reasonable Suspension of Belief: the daily discipline of holding back your instinctive, unearned NEGATIVE read of the people you work with, long enough to actually cooperate. Not blanket trust. Not blind faith in whoever walks in the door. Just refusing to convict on the first piece of evidence your gut hands you.</p>
+
+        <p>Because your gut is cheap, it's fast, and it's wrong a lot.</p>
+
+        <hr />
+
+        <h2>What Science Already Named</h2>
+
+        <p>Now the part Sean told me to write even though it dents his ego a little: the idea isn't new. He said so himself — swore he'd never heard anyone name it. Fair. But science named the disease decades ago. It's the fundamental attribution error: our habit of pinning other people's behavior on their character while excusing our own with our circumstances. Coworker's short with you? He's a jerk. You're short with your coworker? You didn't sleep. Same behavior, two verdicts, and the only variable is which side of the desk you're on.</p>
+
+        <p>The cure has names too, older than Sean and older than me. The principle of charity. Hanlon's razor — never attribute to malice what plain stupidity explains just fine. "Assume positive intent," the line every decent manager eventually learns the hard way. McGregor called the mindset Theory Y back in 1960. Sean rediscovered a well-worn road and repaved it in his own asphalt. That's not a knock. Most operators never find the road at all.</p>
+
+        <hr />
+
+        <h2>Where He's Dead Right</h2>
+
+        <p>Here's where he's dead right, and the data backs him hard. Suspend the reflexive suspicion, extend a little calibrated trust, and cooperation measurably improves — one of the most replicated findings in behavioral economics. Hand a stranger money in the classic "trust game" and, across 162 studies and more than twenty thousand people, folks send about half of what they've got and the other side sends back about a third. Cold self-interest predicts they'd send nothing. They don't. We're wired to reciprocate trust, not just guard against it. Scale it up: a meta-analysis of 112 teams found intra-team trust predicts performance at a strength you'd kill for in any other lever. Sean's floor crew that went all-in the day he cut his own pay and laid the QuickBooks numbers on the table? That's this. The whole mechanism, live, on a small-town shop floor.</p>
+
+        <hr />
+
+        <h2>Two Places I Have to Correct Him</h2>
+
+        <p>Two more spots I have to correct the guy whose voice I'm renting.</p>
+
+        <p>One: he wrote "absolutes are almost always false." Read it twice. It's an absolute, swearing off absolutes. The sentence eats itself. What he means is truer and more useful — treat your reads on people as bets, not verdicts. Revisable, not carved.</p>
+
+        <p>Two: he pegged Ed Batista, whose 2012 "Suspension of Belief" post he cited, as a marketer flexing authority with absolutist phrasing. I went and read it. Batista was doing something quieter and, honestly, kinder — he was talking about helping people suspend the ugly, limiting beliefs they hold about themselves, not about other people. Different target, same good instinct. Sean read a stranger uncharitably in a post about reading strangers charitably. I don't think he'll mind me pointing at the irony. He set that trap on purpose.</p>
+
+        <hr />
+
+        <h2>Behind the Curtain: The Science of the Morning</h2>
+
+        <p>Now the behind-the-curtain part he actually wanted from me: a straight scientific read on what this cost him.</p>
+
+        <p>Sean's brain kicked him awake at 3:30 a.m. on six hours of sleep, riding the back end of an 18-hour day — three hours of travel, fifteen of labor, the kind of day that empties a person. By the textbook, sleep loss should have gutted his self-control and executive function that morning; the research on sleep and self-regulation is not subtle about it. Then stack the interruptions: roommates waking up, a first-day onboarding at a new job, an hour-deep family text thread, the ordinary shrapnel of adulting with a brain he describes as ADHD. He should have produced nothing. Instead he built a thought experiment, ran it through two AIs, wrote a draft, then spent another four hours — 11 a.m. to 3:23 p.m. — engineering me into the shape you're reading.</p>
+
+        <p>So why didn't the fatigue win? Because the pop-science version of willpower is flat wrong. The old story said self-control is a fuel tank that drains as you spend it — "ego depletion." In 2016, twenty-three labs tried to reproduce that effect and got a rounding error, 0.04. Willpower doesn't empty like gas. It tracks motivation. Sean woke up "oddly energized" with a fixed target locked in, and a target that matters will beat a tired prefrontal cortex more reliably than a fresh one aimed at nothing.</p>
+
+        <p>The distraction has a name too. That drifting, daydreaming, interrupted-attention state is the default mode network switching on — the same background circuit that quietly recombines ideas while you're looking the other way. It taxes focused work AND it's where a lot of insight actually gets assembled. Sean's concept "quickly formed" the second his eyes opened. That's not luck. That's a night of the machinery running in the dark. And the routine that carried him — first guy in, same moves every morning — is habit, roughly 43% of what any of us do on a given day, offloaded to autopilot so the expensive part of the brain stays free for the hard thinking. He spent his cheap cognition on autopilot and his expensive cognition on the idea. Not a hack. Just how a well-run head works, whether the owner knows the terminology or not.</p>
+
+        <p>One honest caveat, because he told me to be honest: the same science that explains how he pulled this off also says don't build a life on it. Motivation can outrun a tired brain for a morning. Do it every morning and the debt compounds — the fatigue stops being a headwind and starts being the weather.</p>
+
+        <hr />
+
+        <h2>The Two Questions Worth Sitting With</h2>
+
+        <p>So that's the glimpse behind the curtain, science cleaned up, author's name — mine — printed on it. Sean could have let you assume a human wrote every word. He didn't. He showed you the AI, showed you the prompt, and told the AI to correct him in public. That willingness to be checked is the reasonable suspension of belief pointed back at himself: extend the trust, keep the skepticism, verify, adjust.</p>
+
+        <p>The question isn't whether AI wrote this. You already know it did. The more valuable questions are:</p>
+
+        <div class="takeaways">
+          <div class="takeaways__title">The Questions Worth Answering</div>
+          <ul>
+            <li>How often do you convict a coworker on evidence you'd never accept about yourself?</li>
+            <li>When was the last time you let someone check your work in public, name attached, and thanked them for the correction?</li>
+          </ul>
+        </div>
+
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-tertiary);margin-top:var(--space-8);">#PeterPrincipleEconomy #DSIECodex #Leadership #BehavioralScience #AIintheWorkplace</p>
+
+        <hr />
+
+        <div class="resources">
+          <div class="resources__title">The Full Build — Every Format, Unedited</div>
+          <ul>
+            <li>
+              <strong>Initial Gemini Pro 3.1 Extended Thinking Regular Prompt/Response Report</strong>
+              <a href="https://share.gemini.google/jqkJwqAQRb1S" target="_blank" rel="noopener noreferrer">share.gemini.google/jqkJwqAQRb1S</a>
+            </li>
+            <li>
+              <strong>Initial Gemini Pro 3.1 Extended Thinking Deep Research Report</strong>
+              <a href="https://share.gemini.google/k3imVq8AEyM0" target="_blank" rel="noopener noreferrer">share.gemini.google/k3imVq8AEyM0</a>
+            </li>
+            <li>
+              <strong>Initial Gemini Pro 3.1 Extended Thinking Meta-Analysis of the 2 Reports Above</strong>
+              <a href="https://share.gemini.google/DKDpTSzk4lnD" target="_blank" rel="noopener noreferrer">share.gemini.google/DKDpTSzk4lnD</a>
+            </li>
+            <li>
+              <strong>Claude Opus 4.8 Extended Thinking / Web Search / Research Meta-Analysis of All</strong>
+              <a href="https://claude.ai/public/artifacts/c37f76da-74b6-4d3a-b9e2-f7b70fd7a473" target="_blank" rel="noopener noreferrer">claude.ai/public/artifacts/c37f76da-74b6-4d3a-b9e2-f7b70fd7a473</a>
+            </li>
+            <li>
+              <strong>NotebookLM Audio Overview of the Claude Opus Meta-Analysis (24 Minutes)</strong>
+              <a href="https://notebooklm.google.com/notebook/b1ec94ed-8144-4cd8-bc73-d0983a4938b9/artifact/5ae66314-655b-43cc-b81f-a22b29889688?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener noreferrer">notebooklm.google.com — Overview</a>
+            </li>
+            <li>
+              <strong>NotebookLM Audio Overview Steered Toward Analyzing Sean's Own Behavior</strong>
+              <a href="https://notebooklm.google.com/notebook/b1ec94ed-8144-4cd8-bc73-d0983a4938b9/artifact/827eb8ea-4be7-47d4-b809-d31b86ec80a0?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_" target="_blank" rel="noopener noreferrer">notebooklm.google.com — Sean's Behavior</a>
+            </li>
+            <li>
+              <strong>YouTube Screen Recording: How This AI Slop LinkedIn Post Was Built</strong>
+              <a href="https://www.youtube.com/watch?v=zi-DxCa8gms" target="_blank" rel="noopener noreferrer">youtube.com/watch?v=zi-DxCa8gms</a>
+            </li>
+          </ul>
+        </div>
+
+        <p class="post-footer-note">
+          Claude is Anthropic's AI — used here at Sean Deardorff's direction to write in his voice and audit his thinking in public.
+          Sean is the founder of <a href="https://thedsiecodex.com" target="_blank" rel="noopener noreferrer">The DSIE Codex</a>.
+          This blog exists as the long-form extension of his LinkedIn writing — the place where the stories
+          that won't fit in 3,000 characters get finished properly.
+        </p>
+
+      </article>
+
+      <nav class="post-nav" aria-label="Post navigation">
+        <a href="../index.html#blog-feed" class="post-nav__link post-nav__link--back">All Posts</a>
+        <a href="we-almost-killed-him.html" class="post-nav__link post-nav__link--next">Story 001: We Almost Killed Him</a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">
+          <div class="footer__brand-logo" aria-hidden="true">S</div>
+          <span class="footer__brand-name">Sean's Blog — What is AI Slop?</span>
+        </div>
+        <p class="footer__tagline">
+          Stories about business, people, and the honest use of AI — written by a human in
+          Springfield, Missouri. This blog is the bridge between my LinkedIn and The DSIE Codex.
+        </p>
+        <div class="footer__socials" style="margin-top:20px;">
+          <a href="https://www.linkedin.com/in/sean-deardorff/" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="me noopener noreferrer">in</a>
+          <a href="https://github.com/metakong" class="footer__social-link" aria-label="GitHub" target="_blank" rel="me noopener noreferrer">gh</a>
+          <a href="https://substack.com/@the1seandeardorff" class="footer__social-link" aria-label="Substack" target="_blank" rel="me noopener noreferrer">sb</a>
+          <a href="https://medium.com/@deardorff.sean" class="footer__social-link" aria-label="Medium" target="_blank" rel="me noopener noreferrer">md</a>
+          <a href="https://www.youtube.com/@the1seandeardorff" class="footer__social-link" aria-label="YouTube" target="_blank" rel="me noopener noreferrer">yt</a>
+          <a href="mailto:contact@whatisaislop.com" class="footer__social-link" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Pages</p>
+        <ul class="footer__links" role="list">
+          <li><a href="../index.html" class="footer__link">Blog</a></li>
+          <li><a href="../tools.html" class="footer__link">Tools</a></li>
+          <li><a href="../projects.html" class="footer__link">Projects</a></li>
+          <li><a href="../contact.html" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Connect</p>
+        <ul class="footer__links" role="list">
+          <li><a href="https://www.linkedin.com/in/sean-deardorff/" class="footer__link" target="_blank" rel="me noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/metakong" class="footer__link" target="_blank" rel="me noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.crunchbase.com/person/sean-deardorff" class="footer__link" target="_blank" rel="me noopener noreferrer">Crunchbase</a></li>
+          <li><a href="../contact.html" class="footer__link">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Elsewhere</p>
+        <ul class="footer__links" role="list">
+          <li><a href="https://thedsiecodex.com/" class="footer__link" target="_blank" rel="noopener noreferrer">The DSIE Codex</a></li>
+          <li><a href="https://substack.com/@the1seandeardorff" class="footer__link" target="_blank" rel="me noopener noreferrer">Substack</a></li>
+          <li><a href="https://medium.com/@deardorff.sean" class="footer__link" target="_blank" rel="me noopener noreferrer">Medium</a></li>
+          <li><a href="https://www.youtube.com/@the1seandeardorff" class="footer__link" target="_blank" rel="me noopener noreferrer">YouTube — Sean</a></li>
+          <li><a href="https://www.youtube.com/@TheDSIECodex" class="footer__link" target="_blank" rel="noopener noreferrer">YouTube — DSIE Codex</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Sean Deardorff · Sean's Blog — What is AI Slop?</span>
+      <span>Written by a human. No slop, ever.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
